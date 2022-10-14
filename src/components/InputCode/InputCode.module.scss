@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.input {
+  width: 40px;
+
+  input {
+    text-align: center;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  &:not(:first-child) {
+    margin-left: 24px;
+  }
+}

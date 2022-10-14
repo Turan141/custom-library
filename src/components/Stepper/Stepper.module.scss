@@ -1,0 +1,13 @@
+@import "~@assets/styles/colors.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.dash {
+  margin: 0 8px;
+  height: 0;
+  width: 40px;
+  border-bottom: 1px solid get-color('grey', 600);
+}

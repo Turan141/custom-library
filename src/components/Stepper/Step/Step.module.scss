@@ -1,0 +1,49 @@
+@import "~@assets/styles/colors.scss";
+
+.root {
+  display: inline-flex;
+  height: 24px;
+  overflow-y: visible;
+}
+
+.step {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  margin-right: 8px;
+  color: white;
+  background-color: get-color('blue', 800);
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 18px;
+  user-select: none;
+
+  &:not(.disabled) {
+    cursor: pointer;
+  }
+
+  &.disabled {
+    background-color: get-color('grey', 600);
+  }
+
+  &.error {
+    background-color: get-color('red', 600);
+  }
+}
+
+.label {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+  &.disabled {
+    color: get-color('grey', 600);
+  }
+}
+
+p.error {
+  color: get-color('red', 600);
+}

@@ -1,0 +1,57 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  width: 100%;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+
+  &.warning {
+    background-color: get-color('orange', 700, 0.15);
+    color: get-color('orange', 700);
+  }
+
+  &.success {
+    background-color: get-color('green', 400, 0.15);
+    color: get-color('green', 400);
+  }
+
+  &.danger {
+    background-color: get-color('red', 600, 0.15);
+    color: get-color('red', 600);
+  }
+}
+
+.wrapper {
+  display: inline-flex;
+  margin-left: 10px;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 14px;
+  line-height: 20px;
+
+  .icon {
+    margin-right: 12px;
+    color: white;
+    width: 14px;
+    height: 14px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 6px;
+
+    &.icon-warning {
+      background-color: get-color('orange', 700);
+    }
+
+    &.icon-success {
+      background-color: get-color('green', 400);
+    }
+
+    &.icon-danger {
+      background-color: get-color('red', 600);
+    }
+  }
+}

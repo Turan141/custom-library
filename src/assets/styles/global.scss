@@ -1,0 +1,6 @@
+@import '~@assets/styles/colors.scss';
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: get-color('grey', 50);
+}

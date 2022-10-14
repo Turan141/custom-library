@@ -1,0 +1,816 @@
+{
+   "items":[
+      {
+         "name":"Requests",
+         "description":"Заявки",
+         "statuses":[
+            {
+               "name":"new",
+               "description":"Новая"
+            },
+            {
+               "name":"confirmed",
+               "description":"Подтвержден"
+            },
+            {
+               "name":"canceled",
+               "description":"Отменен"
+            },
+            {
+               "name":"confirmedPerformer",
+               "description":"Принято исполнителем"
+            },
+            {
+               "name":"started",
+               "description":"Начало выполнения"
+            },
+            {
+               "name":"completedWithoutSignature",
+               "description":"Завершена без подписи Агента СПО"
+            },
+            {
+               "name":"completed",
+               "description":"Завершена"
+            },
+            {
+               "name":"rejected",
+               "description":"Отклонено"
+            },
+            {
+               "name":"verified",
+               "description":"Проверено"
+            },
+            {
+               "name":"manualVerification",
+               "description":"Требуется ручная проверка"
+            }
+         ],
+         "properties":[
+            {
+               "name":"customer",
+               "description":"Заказчик",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"Customers"
+            },
+            {
+               "name":"company",
+               "description":"Авиакомпания",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"Companies"
+            },
+            {
+               "name":"aircraft",
+               "description":"Бортовой номер",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"Transports"
+            },
+            {
+               "name":"aircraftType",
+               "description":"Тип ВС",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"AircraftsType"
+            },
+            {
+               "name":"parking",
+               "description":"Место стоянки",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"AircraftParkings"
+            },
+            {
+               "name":"service",
+               "description":"Услуга",
+               "valueType":6,
+               "isRequired":true,
+               "refMasterCode":"Services"
+            },
+            {
+               "name":"startPlan",
+               "description":"Начало работ",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"endPlan",
+               "description":"Окончание работ",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"started",
+               "description":"Фактическое время начало работ",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"completed",
+               "description":"Фактическое время окончания работ",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"startedFixed",
+               "description":"Фактическое время начало работ исправлено",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"completedFixed",
+               "description":"Фактическое время окончания работ исправлено",
+               "valueType":4,
+               "isRequired":false
+            },
+            {
+               "name":"performer",
+               "description":"Исполнитель",
+               "valueType":7,
+               "isRequired":false
+            },
+            {
+               "name":"serviceCancellation",
+               "description":"Отказ от услуги",
+               "valueType":2,
+               "isRequired":false
+            },
+            {
+               "name":"serviceCancellationReason",
+               "description":"Причина отказа",
+               "valueType":3,
+               "isRequired":false
+            },
+            {
+               "name":"additionalInfo",
+               "description":"Дополнительная информация",
+               "valueType":3,
+               "isRequired":false
+            }
+         ],
+         "items":[
+            {
+               "name":"heatingPoint",
+               "description":"Точка обогрева. Ссылка на элемент справочника Подогрев.",
+               "refMasterCode":"70",
+               "isRequiredItemReference":true,
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало вынужденного простоя"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение вынужденного простоя"
+                  }
+               ]
+            },
+            {
+               "name":"garageNumberOfSpecialEquipment",
+               "description":"Гаражный номер специальной техники",
+               "refMasterCode":"Transports",
+               "isRequiredItemReference":false
+            },
+            {
+               "name":"forcedDownTime",
+               "description":"Вынужденный простой.",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало вынужденного простоя"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение вынужденного простоя"
+                  }
+               ]
+            },
+            {
+               "name":"customerSign",
+               "description":"Подпись заказчика",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"position",
+                     "description":"Должность",
+                     "valueType":3,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"fullName",
+                     "description":"ФИО",
+                     "valueType":3,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"customerComments",
+                     "description":"Замечания заказчика",
+                     "valueType":3,
+                     "isRequired":false
+                  }
+               ]
+            },
+            {
+               "name":"dispatcherSign",
+               "description":"Подпись получен диспетчером",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"dispatcherComment",
+                     "description":"Комментарий диспетчера",
+                     "valueType":3,
+                     "isRequired":false
+                  }
+               ]
+            },
+            {
+               "name":"lavatory",
+               "description":"Сан узел",
+               "isRequiredItemReference":true,
+               "refMasterCode":"75",
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"provisioningminibuses",
+               "description":"Предоставление микроавтобусов",
+               "refMasterCode":"71",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"parkingFrom",
+                     "description":"Откуда",
+                     "valueType":6,
+                     "isRequired":false,
+                     "refMasterCode":"AircraftParkings"
+                  },
+                  {
+                     "name":"parkingTo",
+                     "description":"Куда",
+                     "valueType":6,
+                     "isRequired":true,
+                     "refMasterCode":"AircraftParkings"
+                  },
+                  {
+                     "name":"passengersCategory",
+                     "description":"Категории пассажиров",
+                     "valueType":6,
+                     "isRequired":true,
+                     "refMasterCode":"PassengerCategories"
+                  },
+                  {
+                     "name":"passengersCount",
+                     "description":"Количество пассажиров",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"transportNumber",
+                     "description":"Номер машины",
+                     "valueType":3,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"laddersprovision",
+               "description":"Предоставление стремянок/трапов",
+               "refMasterCode":"72",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"laddersSerial",
+                     "description":"Тип стремянки",
+                     "valueType":6,
+                     "isRequired":true,
+                     "refMasterCode":"LaddersProvision"
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"aircraftcooling",
+               "description":"Охлаждение ВС",
+               "isRequiredItemReference":false,
+               "refMasterCode":"73",
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"watersystemmaintenance",
+               "description":"Обслуживание водяной системы",
+               "isRequiredItemReference":true,
+               "refMasterCode":"80",
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"sanitaryInspection",
+               "description":"Санитарная Инспекция",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"tiedownstraps",
+               "description":"Швартовочное оборудование",
+               "refMasterCode":"88",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"kitsCount",
+                     "description":"Количество комплектов",
+                     "valueType":0,
+                     "isRequired":true
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"provisioningescortvehicle",
+               "description":"Предоставление автомашины для сопровождения при буксировке ВС через ВПП",
+               "isRequiredItemReference":false,
+               "refMasterCode":"83",
+               "properties":[
+                  {
+                     "name":"routeFrom",
+                     "description":"Откуда",
+                     "valueType":6,
+                     "isRequired":false,
+                     "refMasterCode":"AircraftParkings"
+                  },
+                  {
+                     "name":"routeTo",
+                     "description":"Куда",
+                     "valueType":6,
+                     "isRequired":false,
+                     "refMasterCode":"AircraftParkings"
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"personnelforadditionalwork",
+               "description":"Персонал для дополнительных работ",
+               "isRequiredItemReference":true,
+               "refMasterCode":"85",
+               "properties":[
+                  {
+                     "name":"personnelCount",
+                     "description":"Количество персонала",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"provisionofspecialmachinery",
+               "description":"Предоставление спецтехники и оборудования для погрузочно-разгрузочных работ",
+               "isRequiredItemReference":true,
+               "refMasterCode":"84",
+               "properties":[
+                  {
+                     "name":"machineryCount",
+                     "description":"Количество спецтехники и оборудования",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"maintancekit",
+               "description":"Техническая аптечка ВС",
+               "isRequiredItemReference":true,
+               "refMasterCode":"86",
+               "properties":[
+                  {
+                     "name":"typework",
+                     "description":"Вид работы",
+                     "valueType":6,
+                     "isRequired":false,
+                     "refMasterCode":"TypeWork"
+                  },
+                  {
+                     "name":"numberseats",
+                     "description":"Мест",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"weight",
+                     "description":"Вес, кг",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"addInfo",
+                     "description":"Дополнительная информация",
+                     "valueType":3,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"refuelingwithcompressedgas",
+               "description":"Заправка сжатым газом",
+               "isRequiredItemReference":true,
+               "refMasterCode":"89",
+               "properties":[
+                  {
+                     "name":"addInfo",
+                     "description":"Дополнительная информация",
+                     "valueType":3,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"draincontainer",
+               "description":"Емкость для слива ГСМ",
+               "isRequiredItemReference":true,
+               "refMasterCode":"82",
+               "properties":[
+                  {
+                     "name":"litersCount",
+                     "description":"Количество литров",
+                     "valueType":0,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"anyServiceFlight",
+               "description":"Произвольная услуга. Рейс.",
+               "isRequiredItemReference":false,
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            },
+            {
+               "name":"groundpowerunit",
+               "description":"Предоставление источника электропитания",
+               "isRequiredItemReference":true,
+               "refMasterCode":"81",
+               "properties":[
+                  {
+                     "name":"started",
+                     "description":"Время начала",
+                     "valueType":4,
+                     "isRequired":false
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Время окончания",
+                     "valueType":4,
+                     "isRequired":false
+                  }
+               ],
+               "statuses":[
+                  {
+                     "name":"started",
+                     "description":"Начало"
+                  },
+                  {
+                     "name":"completed",
+                     "description":"Завершение"
+                  }
+               ]
+            }
+         ]
+      }
+   ]
+}

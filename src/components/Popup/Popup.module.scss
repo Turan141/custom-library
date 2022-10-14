@@ -1,0 +1,14 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+    display: flex;
+    flex-direction: column;
+    width: 324px;
+    padding: 4px;
+    box-shadow: 0 0 14.7754px rgba(17, 82, 99, 0.075),
+        0 0 7.84712px rgba(17, 82, 99, 0.0605839),
+        0 0 3.26536px rgba(17, 82, 99, 0.0421718);
+    border-radius: 4px;
+    background-color: get-color('white', 50);
+    z-index: 1000;
+}

@@ -1,0 +1,57 @@
+@import './src/assets/styles/colors.scss';
+
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  transition: 0.4s ease all;
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  height: 36px;
+
+  &.filled {
+    color: get-color('white', 50);
+    background-color: get-color('blue', 800);
+
+    &:hover {
+      background-color: get-color('blue', 900);
+    }
+  }
+
+  &.text {
+    color: get-color('grey', 600);
+  }
+
+  &.round {
+    padding: 9px 16px;
+    border-radius: 18px;
+  }
+
+  &.circle {
+    width: 36px;
+    padding: 9px 0;
+    border-radius: 50%;
+  }
+
+  &.fullWidth {
+    width: 100%;
+  }
+
+  &.disabled {
+    background-color: get-color('blue', 800, 0.1);
+    pointer-events: none;
+  }
+}
+
+.icon {
+  margin: 0 8px 0 0;
+}

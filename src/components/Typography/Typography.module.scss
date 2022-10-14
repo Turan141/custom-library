@@ -1,0 +1,55 @@
+@import './src/assets/styles/colors.scss';
+
+.root {
+  &.h1 {
+    font-size: 26px;
+    line-height: 32px;
+    font-weight: 700;
+  }
+
+  &.h2 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 700;
+  }
+
+  &.h4 {
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 500;
+  }
+
+  &.h5 {
+    font-size: 14px;
+    line-height: 18px;
+    font-weight: 400;
+  }
+
+  &.p {
+    &Small {
+      font-size: 10px;
+      line-height: 14px;
+      font-weight: 400;
+    }
+
+    &Medium {
+      font-size: 12px;
+      line-height: 16px;
+      font-weight: 400;
+    }
+
+    &Large {
+      font-size: 14px;
+      line-height: 18px;
+      font-weight: 400;
+    }
+  }
+
+  &.dark {
+    color: get-color('black', 900);
+  }
+
+  &.light {
+    color: get-color('white', 50);
+  }
+}

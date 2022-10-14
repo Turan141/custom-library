@@ -1,0 +1,80 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  user-select: none;
+  border: 0;
+  outline: 0;
+  margin: 0;
+  padding: 0 0 0 24px;
+  text-decoration: none;
+  white-space: nowrap;
+  background-color: transparent;
+  color: get-color('black', 900);
+  transition: .2s ease all;
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 500;
+  border-radius: 24px;
+  position: relative;
+  overflow: hidden;
+  z-index: 1;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    border-radius: 24px;
+    z-index: -2;
+  }
+
+  &::before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0;
+    height: 100%;
+    background-color: get-color('black', 900);
+    transition: all .2s;
+    border-radius: 24px;
+    z-index: -1;
+  }
+
+  &:hover {
+    color: get-color('white', 50);
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  &:focus {
+    color: get-color('white', 50);
+
+    &::before {
+      width: 100%;
+    }
+  }
+
+  .icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 48px;
+    height: 48px;
+    background-color: get-color('black', 900);
+    border-radius: 50%;
+    margin: 0 0 0 16px;
+    z-index: 2;
+    color: get-color('white', 50);
+    font-size: 48px;
+  }
+}

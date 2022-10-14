@@ -1,0 +1,33 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  border-radius: 8px;
+
+  &:hover {
+    background-color: get-color('grey', 600, 0.2);
+  }
+
+  &.selected {
+    background-color: get-color('grey', 600, 0.3);
+  }
+}
+
+.link {
+  display: flex;
+  align-items: center;
+  padding: 8px;
+  color: get-color('black', 900, 0.7);
+  font-size: 14px;
+  line-height: 18px;
+  font-weight: 400;
+  text-decoration: none;
+
+  &:active {
+    color: get-color('black', 900, 0.7);
+  }
+}
+
+.icon {
+  font-size: 24px;
+  margin-right: 16px;
+}

@@ -1,0 +1,12 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+}
+
+.item {
+  &:not(:first-child) {
+    margin: 0 0 0 8px;
+  }
+}

@@ -1,0 +1,6 @@
+@import '~@assets/styles/colors.scss';
+
+:global .icon-user {
+  font-size: 24px;
+  color: get-color('black', 900);
+}

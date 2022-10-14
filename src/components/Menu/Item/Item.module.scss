@@ -1,0 +1,28 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  padding: 7px 17px;
+  border-radius: 4px;
+  cursor: pointer;
+  user-select: none;
+
+  &:hover {
+    background-color: get-color('grey', 50);
+  }
+
+  &:active {
+    background-color: get-color('grey', 100);
+  }
+}
+
+.icon {
+  margin: 0 24px 0 0;
+}
+
+.link {
+  margin: 0 24px 0 0;
+  text-decoration: none;
+}

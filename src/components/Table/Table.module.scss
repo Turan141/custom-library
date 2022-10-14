@@ -1,0 +1,74 @@
+@import './src/assets/styles/colors';
+
+.root {
+    border-collapse: collapse;
+    &.scrollable {
+        display: block;
+        .row,
+        .td,
+        .body,
+        .head {
+            display: block;
+        }
+        .body {
+            overflow-y: auto;
+            overflow-x: hidden;
+            scrollbar-width: thin;
+            scrollbar-color: get-color('grey', 600) get-color('grey', 600, 0.3);
+            /* Let's get this party started */
+            &::-webkit-scrollbar {
+                width: 4px;
+            }
+
+            /* Track */
+            &::-webkit-scrollbar-track {
+                background: get-color('grey', 600, 0.3);
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+            }
+
+            /* Handle */
+            &::-webkit-scrollbar-thumb {
+                -webkit-border-radius: 10px;
+                border-radius: 10px;
+                background: get-color('grey', 600);
+            }
+        }
+    }
+}
+
+.head {
+    .header {
+        color: get-color('grey', 600);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        padding: 8px 16px;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}
+
+.body {
+    .row {
+        display: flex;
+        &:nth-child(odd) {
+            background-color: get-color('grey', 50);
+        }
+    }
+
+    .td {
+        color: get-color('black', 900);
+        font-size: 12px;
+        line-height: 16px;
+        font-weight: 400;
+        text-align: left;
+        padding: 16px 0 16px 16px;
+        text-overflow: ellipsis;
+        white-space: normal;
+        overflow: hidden;
+        word-wrap: break-word;
+    }
+}

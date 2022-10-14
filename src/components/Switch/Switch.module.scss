@@ -1,0 +1,74 @@
+.Wrapper {
+	display: flex;
+	align-items: center;
+
+  input[type="checkbox"] {
+    display: none;
+  }
+  input[type="checkbox"]:checked + .switch::before {
+    transform: translateX(15px);
+  }
+
+  label {
+    font-size: 14px;
+    font-family: Montserrat, sans-serif;
+    line-height: 20px;
+  }
+}
+
+.switchWrapper {
+  width: 36px;
+  height: 20px;
+	position: relative;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+	margin-right: 12px;
+	box-shadow: 0px 1px 2px 0px rgba(#B2B6BD1A, 0.25);
+}
+
+.switch {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  cursor: pointer;
+  background-color: #ccc;
+  border-radius: 10px;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  transition: background-color 0.2s ease;
+	&:before {
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    top: 1.1px;
+    left: 2px;
+    right: 2px;
+    background-color: #fff;
+    border-radius: 50%;
+    transition: transform 0.3s ease;
+	}
+}
+
+.inactive {
+	.switch {
+		background-color: #E7F1FA;
+	}
+	label {
+		color: #9CB1C7;
+	}
+}
+.active {
+	.switch {
+		background-color: #74D85A;
+    &:before {
+      background: #fff url('../../assets/icons/switch-tick.svg') no-repeat center;
+    }
+	}
+	label {
+		color: #131D2D;
+	}
+}

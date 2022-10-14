@@ -1,0 +1,25 @@
+.tabs {
+    display: flex;
+    position: relative;
+    overflow: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+    flex: 0 0 100%;
+    width: 100%;
+}
+
+.tabsInner {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: nowrap;
+    margin-bottom: 5px;
+}
+
+.indicator {
+    position: absolute;
+    bottom: 5px;
+    height: 0;
+    border-bottom: 2px solid #3964d8;
+    transition: 150ms linear;
+}

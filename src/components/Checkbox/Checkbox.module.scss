@@ -1,0 +1,73 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: inline-flex;
+  align-items: center;
+
+  &.disabled {
+    .checkbox {
+      background-color: get-color('black', 900, 0.1);
+      svg {
+        margin-left: -5px;
+        path {
+          fill : get-color('black', 900, 1);
+
+        }
+      }
+    }
+  }
+
+  &.checked {
+    .checkbox {
+      border-color: get-color('blue', 800);
+      background-color: get-color('blue', 800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        padding: 2px;
+        color: white;
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    .checkbox {
+      border-color: get-color('blue', 800);
+    }
+  }
+
+  .control {
+    height: 16px;
+  }
+
+  input {
+    display: none;
+  }
+
+  .checkbox {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: #ffffff;
+    border: 1px solid get-color('grey', 800);
+    border-radius: 4px;
+
+    > span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

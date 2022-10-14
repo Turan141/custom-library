@@ -1,0 +1,40 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  padding-left: 8px;
+  padding-right: 3px;
+  height: 18px;
+  border-radius: 9px;
+  background-color: get-color('blue', 800);
+  cursor: default;
+  color: get-color('white', 50);
+
+  &:not(:last-child) {
+    margin-right: 8px;
+  }
+
+  > p {
+    //max-width: ;
+    overflow: hidden;
+    word-wrap: normal;
+    text-overflow: ellipsis;
+    color: get-color('white', 50) !important;
+  }
+  &.disabled {
+    background-color: get-color('grey', 600) !important;
+    padding-right: 8px;
+    .close {
+      display: none;
+    }
+  }
+}
+
+.close {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-left: 6px;
+  cursor: pointer;
+}

@@ -1,0 +1,21 @@
+@import '~@assets/styles/colors.scss';
+@import '~@assets/styles/breakpoints.scss';
+
+.root {
+  @include breakpoints('desktop') {
+    width: 272px;
+  }
+
+  @include breakpoints('laptop') {
+    width: 170px;
+  }
+
+  padding: 32px 8px;
+  background-color: get-color('white', 50);
+}
+
+.item {
+  &:not(:first-child) {
+    margin: 16px 0 0 0;
+  }
+}

@@ -1,0 +1,12 @@
+@import './src/assets/styles/colors.scss';
+
+.root {
+  font-size: 12px;
+  line-height: 16px;
+  font-weight: 400;
+  color: get-color('blue', 800);
+
+  &:active {
+    color: get-color('blue', 900);
+  }
+}

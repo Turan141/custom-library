@@ -1,0 +1,40 @@
+@import '~@assets/styles/colors.scss';
+
+.group {
+  display: flex;
+  flex-direction: column;
+
+  .groupTitle {
+    font-weight: 600;
+    padding: 10px 0 10px 12px;
+  }
+}
+
+.option {
+  display: flex;
+  width: 100%;
+  align-items: center;
+  height: 28px;
+  padding-left: 11px;
+  background-color: transparent;
+  cursor: pointer;
+  border-radius: 4px;
+
+  &:not(:last-child) {
+    margin-bottom: 4px;
+  }
+
+  &:not(.disabled):not(.selected):hover {
+    background-color: get-color('grey', 50);
+  }
+
+  &.selected {
+    background-color: get-color('grey', 100);
+  }
+
+  &.disabled {
+    pointer-events: none;
+    cursor: auto;
+    color: get-color('black', 900, 0.2);
+  }
+}

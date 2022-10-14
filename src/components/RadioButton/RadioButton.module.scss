@@ -1,0 +1,80 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: inline-flex;
+  align-items: center;
+
+  &.disabled {
+    .radioButton {
+      background-color: get-color('black', 900, 0.1);
+    }
+  }
+
+  &.checked {
+    .radioButton {
+      border-color: get-color('blue', 800);
+      background-color: get-color('blue', 800);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      i {
+        padding: 2px;
+        color: white;
+        font-size: 9px;
+      }
+    }
+  }
+}
+
+.radioButtonIcon > svg {
+  width: 10px;
+}
+
+.wrapper {
+  display: inline-flex;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+  width: 100%;
+
+  &:hover {
+    .radioButton {
+      border-color: get-color('blue', 800);
+    }
+  }
+
+  .control {
+    position: relative;
+    height: 16px;
+  }
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+  }
+
+  input:focus + span {
+    outline: 2px solid get-color('blue', 800);
+  }
+
+  .radioButton {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
+    background-color: #ffffff;
+    border: 1px solid get-color('grey', 800);
+    border-radius: 50%;
+
+    span {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}

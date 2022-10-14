@@ -1,0 +1,31 @@
+@import '~simplebar/src/simplebar.css';
+@import '~@assets/styles/colors.scss';
+
+.root {
+    height: inherit;
+    max-height: inherit;
+    min-height: inherit;
+
+    :global {
+        .simplebar-track {
+            width: 4px !important;
+            background: get-color('grey', 600, 0.3);
+            border-radius: 2px;
+            opacity: 1;
+        }
+
+        .simplebar-scrollbar {
+            &:before {
+                width: 4px;
+                background: get-color('grey', 600);
+                border-radius: 2px;
+                left: 0;
+                opacity: 1;
+            }
+
+            &.simplebar-visible:before {
+                opacity: 1;
+            }
+        }
+    }
+}

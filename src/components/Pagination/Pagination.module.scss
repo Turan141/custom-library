@@ -1,0 +1,36 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: flex;
+  color: get-color('grey', 600) !important;
+  margin-top: 14px;
+  align-items: center;
+
+  > *:not(:last-child){
+    margin-right: 16px;
+  }
+}
+
+.select {
+  display: flex;
+  align-items: center;
+
+  label {
+    padding: 0 0 0 5px;
+  }
+
+  input {
+    color: get-color('grey', 600)
+  }
+
+  > * {
+    max-height: 32px;
+    max-width: 40px;
+  }
+}
+
+.button {
+  width: 24px !important;
+  background-color: transparent !important;
+  height: 24px;
+}

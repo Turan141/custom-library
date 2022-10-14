@@ -1,0 +1,41 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.item {
+  width: 8px;
+  height: 8px;
+  border-radius: 100%;
+  background-color: get-color('white', 50);
+  animation: bounce 1.5s 0.5s linear infinite;
+
+  &:not(:first-child) {
+    margin: 0 0 0 6px;
+  }
+
+  &:nth-child(2) {
+    animation-delay: 0.1s;
+  }
+
+  &:nth-child(3) {
+    animation-delay: 0.2s;
+  }
+}
+
+@keyframes bounce {
+  0%, 50%, 100% {
+    transform: scale(1);
+  }
+
+  25% {
+    transform: scale(0.6);
+  }
+
+  75% {
+    transform: scale(1.4);
+  }
+}

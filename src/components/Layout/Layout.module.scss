@@ -1,0 +1,48 @@
+@import '~@assets/styles/colors.scss';
+@import '~@assets/styles/breakpoints.scss';
+
+.root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow-x: hidden;
+
+}
+
+.wrapper {
+  display: flex;
+  flex-grow: 1;
+}
+
+.sidebar {
+  flex: 0 0 auto;
+}
+
+.main {
+  @include breakpoints('desktop') {
+    padding: 39px 32px 32px 32px;
+  }
+
+  @include breakpoints('laptop') {
+    padding: 39px 0 32px 0;
+  }
+
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  @include breakpoints('laptop') {
+    margin-left: 16px;
+  }
+
+  margin: 0 0 25px 0;
+}
+
+.block {
+  flex: 1;
+  padding: 24px 16px 16px 16px;
+  /*background-color: get-color('white', 50);*/
+  border-radius: 12px;
+}

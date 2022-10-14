@@ -1,0 +1,33 @@
+@import '~@assets/styles/colors.scss';
+
+.root {
+  display: inline-block;
+  position: relative;
+
+  &.hidden {
+    .badge {
+      transition: transform 195ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+    }
+  }
+}
+
+.badge {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  border: 1px solid get-color('black', 900);
+  background-color: get-color('red', 600);
+  min-width: 8px;
+  height: 8px;
+  font-size: 9px;
+  line-height: 11px;
+  color: get-color('white', 50);
+  font-weight: 500;
+  padding: 2px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  user-select: none;
+  transition: transform 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+}
